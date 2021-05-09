@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.util.Map;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -20,12 +19,10 @@ public class MainWindow extends JFrame {
 	private JLabel title;
 	
 	private JMenuBar mb;
-    private JMenu menu;
     private JMenuItem addBus, addDriver, information, calculateRoute, edit;
     private JTextArea description;
     private JTextArea contact;
-    
-//    private Maps
+   
 
 	public MainWindow(String title) {
 		super(title);
