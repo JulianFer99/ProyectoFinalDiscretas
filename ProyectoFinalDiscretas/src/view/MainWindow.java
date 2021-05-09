@@ -23,14 +23,15 @@ public class MainWindow extends JFrame {
     private JMenu menu;
     private JMenuItem addBus, addDriver, information, calculateRoute, edit;
     private JTextArea description;
+    private JTextArea contact;
     
 //    private Maps
 
 	public MainWindow(String title) {
 		super(title);
-		setSize(new Dimension(480, 420));
+		setSize(new Dimension(550, 620));
 		setLayout(new GridBagLayout());
-		setResizable(true);
+		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		beginComponents();
 		addComponents();
@@ -46,6 +47,10 @@ public class MainWindow extends JFrame {
 					+"Terminal Salitre. La empresa también ofrece, junto \n"
 					+"con el transporte de pasajeros, servicios de turismo, \n"
 					+"servicios personalizados y carga.");
+		
+		contact = new JTextArea("Oficina Principal: Calle 9 # 20-08 Sogamoso – Boyacá.\r\n"
+				+ "	(57+8) 7725815 Línea Amiga\r\n"
+				+ "                Email: servicioalcliente@coflonorte.com");
 	
 	}
 
@@ -71,13 +76,11 @@ public class MainWindow extends JFrame {
 		JLabel bnrFlag = new JLabel();
 		bnrFlag.setIcon(imgFlag);
 		add(bnrFlag, gbc);
-		gbc.fill = GridBagConstraints.NONE;
 		gbc.gridwidth = 1;
 		
 		gbc.gridy = 2;
 		gbc.gridx = 2;
 		add(new JLabel("      "), gbc);
-		gbc.fill = GridBagConstraints.NONE;
 		gbc.gridwidth = 1;
 		
 		gbc.gridy = 2;
@@ -88,6 +91,26 @@ public class MainWindow extends JFrame {
 		add(description, gbc);
 		gbc.fill = GridBagConstraints.NONE;
 		gbc.gridwidth = 1;
+		
+		gbc.gridy = 3;
+//		gbc.gridx = 2;
+		gbc.gridwidth = 4;
+		add(new JLabel("      "), gbc);
+		gbc.gridwidth = 1;
+		
+		gbc.gridy = 4;
+		gbc.gridx = 0;
+		gbc.gridwidth = 4;
+		ImageIcon imgMap = new ImageIcon("resources/map.png");
+		JLabel bnrMap = new JLabel();
+		bnrMap.setIcon(imgMap);
+		contact.setBackground(new Color(0, 0, 0, 0));
+		add(bnrMap, gbc);
+		gbc.gridwidth = 1;
+		
+		gbc.gridy = 6;
+		gbc.gridwidth = 4;
+		add(contact, gbc);
 	}
 
 	private Component menu() {
